@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddNoteActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.mynotes.mynotes.MESSAGE";
@@ -20,11 +21,17 @@ public class AddNoteActivity extends AppCompatActivity {
             editText.setText(note);
         }
     }
+
     public void saveNote(View view) {
         Intent intent = new Intent(this, DisplayNoteActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        if (!message.isEmpty()) {
+            intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
+            intent.removeExtra(EXTRA_MESSAGE);
+        } else {
+            Toast.makeText(this, "You can't create an empty note!!!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

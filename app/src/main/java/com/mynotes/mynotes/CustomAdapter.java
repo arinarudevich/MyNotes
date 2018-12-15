@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,7 +59,7 @@ public class CustomAdapter extends BaseAdapter {
 
         ((TextView) view.findViewById(R.id.note)).setText(myNote);
 
-        Button delete = (Button) view.findViewById(R.id.delete);
+        ImageButton delete = (ImageButton) view.findViewById(R.id.delete);
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override

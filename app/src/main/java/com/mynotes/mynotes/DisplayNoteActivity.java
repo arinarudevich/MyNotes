@@ -30,16 +30,25 @@ public class DisplayNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_note);
         Intent intent = getIntent();
-        String message = intent.getStringExtra(AddNoteActivity.EXTRA_MESSAGE);
         lv = (ListView) findViewById(R.id.listView);
         prefs = getSharedPreferences(SHARED_PREFS_FILE, Context.MODE_PRIVATE);
         notes = this.getNotesFromPref();
-        notes.add(0, message);
+        String message = intent.getStringExtra(AddNoteActivity.EXTRA_MESSAGE);
+        if(message != null){
+            if(!message.isEmpty()){
+                notes.add(0, message);
+            }
+        }
         this.saveNotesToPref(notes);
         CustomAdapter myAdapter = new CustomAdapter(this, notes, lv);
-
         lv.setAdapter(myAdapter);
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getIntent().removeExtra("EXTRA_MESSAGE");
+        getIntent().removeExtra("EXTRA_NOTE");
     }
 
     public static void saveNotesToPref(ArrayList<String> currentNotes) {
@@ -67,13 +76,18 @@ public class DisplayNoteActivity extends AppCompatActivity {
     }
     public void editNote(View view){
         Intent intent = new Intent(this, AddNoteActivity.class);
-        View parentRow = (View) view.getParent().getParent();
+        View parentRow = (View) view.getParent();
         ListView listView = (ListView) parentRow.getParent();
         final int position = listView.getPositionForView(parentRow);
         String message = notes.get(position);
         notes.remove(message); //TODO: add func to delete from pref
         DisplayNoteActivity.saveNotesToPref(notes);
         intent.putExtra(EXTRA_NOTE, message);
+        startActivity(intent);
+    }
+    public void addNote(View view){
+        Intent intent = new Intent(this, AddNoteActivity.class);
+        intent.putExtra(EXTRA_NOTE, "");
         startActivity(intent);
     }
 }
