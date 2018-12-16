@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_public_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_save_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,11 +28,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="height" value="40" />
-                            <entry key="outputName" value="random_note" />
+                            <entry key="color" value="ffa5b6" />
+                            <entry key="outputName" value="floppy" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\User" />
-                            <entry key="width" value="40" />
                           </map>
                         </option>
                       </PersistentState>

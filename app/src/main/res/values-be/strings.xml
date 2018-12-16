@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">Natatki</string>
+    <string name="add_note_hint">Увядзіце сваю нататку ...</string>
+    <string name="empty_note_warning">"Нельга захаваць пустую нататку !!!"</string>
+    <string name="delete_note_confirm">Вы ўпэўнены, што хочаце выдаліць нататку: O?</string>
+    <string name="delete_note_msg">Нататку выдалілі:(</string>
+    <string name="get_random_note_title">Атрымай выпадковую нататку XD!!!</string>
+    <string name="get_random_note">АТРЫМАЦЬ НАТАТКУ!</string>
+    <string name="random_note_hint">Тут з\'явіцца нататка..</string>
+    <string name="save_random_note">ЗАХАВАЦЬ</string>
+    <string name="toast_error">Ой! Нешта пайшло не так :O!</string>
+</resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">MyNotes</string>
+    <string name="app_name" translatable="false">Natatki</string>
     <string name="add_note_hint">Type your note here..</string>
     <string name="empty_note_warning">"You can't save an empty note!!!"</string>
     <string name="delete_note_confirm">Do you really want to delete this note :O?</string>
