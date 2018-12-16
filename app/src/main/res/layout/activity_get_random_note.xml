@@ -55,6 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
         android:id="@+id/randomNote"
         android:layout_width="wrap_content"

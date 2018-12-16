@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,6 +76,7 @@ public class CustomAdapter extends BaseAdapter {
                                 Toast.makeText(ctx,
                                         ctx.getResources().getString(R.string.delete_note_msg)
                                         , Toast.LENGTH_SHORT).show();
+                                Log.i("DisplayNoteActivity", "Deleting note");
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
                 }

@@ -1,8 +1,11 @@
 package com.mynotes.mynotes;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Message;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Random;
+
+import static com.mynotes.mynotes.DisplayNoteActivity.SHARED_PREFS_FILE;
 
 public class GetUrlContentTask extends AsyncTask<String, Integer, String> {
     public Activity activity;
