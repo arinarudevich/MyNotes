@@ -6,17 +6,10 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class DisplayNoteActivity extends AppCompatActivity {
     public ListView lv;
@@ -44,13 +37,6 @@ public class DisplayNoteActivity extends AppCompatActivity {
         lv.setAdapter(myAdapter);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        getIntent().removeExtra("EXTRA_MESSAGE");
-        getIntent().removeExtra("EXTRA_NOTE");
-    }
-
     public static void saveNotesToPref(ArrayList<String> currentNotes) {
         SharedPreferences.Editor editor = prefs.edit();
         try {
@@ -61,7 +47,8 @@ public class DisplayNoteActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public ArrayList<String> getNotesFromPref() {
+    public static ArrayList<String> getNotesFromPref() {
+        ArrayList<String> notes = new ArrayList<>();
         try {
             notes = (ArrayList<String>) ObjectSerializer.deserialize(prefs.getString("Notes",
                     ObjectSerializer.serialize(new ArrayList<String>())));
@@ -80,7 +67,7 @@ public class DisplayNoteActivity extends AppCompatActivity {
         ListView listView = (ListView) parentRow.getParent();
         final int position = listView.getPositionForView(parentRow);
         String message = notes.get(position);
-        notes.remove(message); //TODO: add func to delete from pref
+        notes.remove(message);
         DisplayNoteActivity.saveNotesToPref(notes);
         intent.putExtra(EXTRA_NOTE, message);
         startActivity(intent);
@@ -88,6 +75,11 @@ public class DisplayNoteActivity extends AppCompatActivity {
     public void addNote(View view){
         Intent intent = new Intent(this, AddNoteActivity.class);
         intent.putExtra(EXTRA_NOTE, "");
+        startActivity(intent);
+    }
+
+    public void addRandomNote(View view) {
+        Intent intent = new Intent(this, GetRandomNoteActivity.class);
         startActivity(intent);
     }
 }

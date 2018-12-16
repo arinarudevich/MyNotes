@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">MyNotes</string>
+    <string name="add_note_hint">Введите свою заметку...</string>
+    <string name="empty_note_warning">"Нельзя сохранить пустую заметку!!!"</string>
+    <string name="delete_note_confirm">Вы уверены, что хотите удалить заметку:O?</string>
+    <string name="delete_note_msg">Заметка была удалена :(</string>
+    <string name="get_random_note_title">Получи случайную заметку XD!!!</string>
+    <string name="get_random_note">ПОЛУЧИТЬ ЗАМЕТКУ!</string>
+    <string name="random_note_hint">Тут появится заметка..</string>
+    <string name="save_random_note">СОХРАНИТЬ</string>
+    <string name="toast_error">Ой! Что-то пошло не так :O!</string>
+</resources>

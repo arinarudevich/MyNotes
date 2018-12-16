@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class AddNoteActivity extends AppCompatActivity {
@@ -29,9 +30,9 @@ public class AddNoteActivity extends AppCompatActivity {
         if (!message.isEmpty()) {
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
-            intent.removeExtra(EXTRA_MESSAGE);
         } else {
-            Toast.makeText(this, "You can't create an empty note!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.empty_note_warning),
+                    Toast.LENGTH_SHORT).show();
         }
     }
 }

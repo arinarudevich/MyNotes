@@ -34,4 +34,19 @@
         android:src="@drawable/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/randomNote2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginBottom="136dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="random note"
+        android:onClick="addRandomNote"
+        android:src="@drawable/random_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 </android.support.constraint.ConstraintLayout>

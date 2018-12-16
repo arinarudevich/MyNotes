@@ -65,14 +65,16 @@ public class CustomAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(ctx)
-                        .setMessage("Do you really want to delete this note :O?")
+                        .setMessage(ctx.getResources().getString(R.string.delete_note_confirm))
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 objects.remove(myNote);
                                 DisplayNoteActivity.saveNotesToPref(objects);
                                 listView.invalidateViews();
-                                Toast.makeText(ctx, "Note was deleted :(", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ctx,
+                                        ctx.getResources().getString(R.string.delete_note_msg)
+                                        , Toast.LENGTH_SHORT).show();
                             }})
                         .setNegativeButton(android.R.string.no, null).show();
                 }
