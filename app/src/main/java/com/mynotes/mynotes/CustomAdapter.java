@@ -67,7 +67,6 @@ public class CustomAdapter extends BaseAdapter {
             public void onClick(View v) {
                 new AlertDialog.Builder(ctx)
                         .setMessage(ctx.getResources().getString(R.string.delete_note_confirm))
-                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 objects.remove(myNote);

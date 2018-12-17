@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false"></string>
+    <string name="app_name" translatable="false">Natatki</string>
     <string name="add_note_hint">Введите свою заметку...</string>
     <string name="empty_note_warning">"Нельзя сохранить пустую заметку!!!"</string>
     <string name="delete_note_confirm">Вы уверены, что хотите удалить заметку:O?</string>
