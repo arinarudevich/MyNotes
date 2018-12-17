@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class AddNoteActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.mynotes.mynotes.MESSAGE";
     public static final String LOG_TAG = "AddNoteActivity";
-
+    public static String editedNote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,7 @@ public class AddNoteActivity extends AppCompatActivity {
             String note = intent.getStringExtra(DisplayNoteActivity.EXTRA_NOTE);
             EditText editText = (EditText) findViewById(R.id.editText);
             editText.setText(note);
+            editedNote = note;
         }
         Log.i(LOG_TAG, "Creating AddNoteActivity");
     }
@@ -31,7 +32,7 @@ public class AddNoteActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
         if (!message.isEmpty()) {
-            DisplayNoteActivity.deleteNoteFromPref(message);
+            DisplayNoteActivity.deleteNoteFromPref(editedNote);
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         } else {
